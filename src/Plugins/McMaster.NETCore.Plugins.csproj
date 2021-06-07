@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <DisablePublicApiAnalyzer>true</DisablePublicApiAnalyzer>
+    <OutputType>library</OutputType>
+    <IsPackable>true</IsPackable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageDescription>Provides API for dynamically loading assemblies into a .NET application.
+    </PackageDescription>
+    <PackageTags>.NET Core;plugins</PackageTags>
+    <DefineConstants>$(DefineConstants);FEATURE_UNLOAD</DefineConstants>
+    <DefineConstants>$(DefineConstants);FEATURE_NATIVE_RESOLVER</DefineConstants>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.PlatformAbstractions" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="5.0.0" />
+    <PackageReference Include="System.Text.Json" Version="5.0.1" Condition="'$(TargetFramework)' == 'netcoreapp2.1'" />
+  </ItemGroup>
+
+</Project>

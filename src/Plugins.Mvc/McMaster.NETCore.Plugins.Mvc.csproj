@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>library</OutputType>
+    <Nullable>enable</Nullable>
+    <DisablePublicApiAnalyzer>true</DisablePublicApiAnalyzer>
+    <IsPackable>true</IsPackable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageDescription>Provides API for dynamically loading MVC controllers into an ASP.NET Core web application.
+    </PackageDescription>
+    <PackageTags>.NET Core;plugins;aspnetcore</PackageTags>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Plugins\McMaster.NETCore.Plugins.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>

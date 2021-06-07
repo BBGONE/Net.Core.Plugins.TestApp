@@ -1,0 +1,11 @@
+<Project InitialTargets="UpdateCiSettings">
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <Target Name="UpdateCiSettings" Condition="'$(CI)' == 'true' AND '$(IsPackable)' == 'true'">
+    <Message Importance="High" Text="::set-output name=package_version::$(PackageVersion)" />
+  </Target>
+
+</Project>
